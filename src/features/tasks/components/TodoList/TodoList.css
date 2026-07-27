@@ -1,0 +1,39 @@
+.todo-list {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.85rem;
+  list-style: none;
+}
+
+.todo-list__state {
+  min-height: 10rem;
+  padding: 1.5rem;
+  display: grid;
+  place-items: center;
+  color: var(--color-text-muted);
+  background: var(--color-surface-alt);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-lg);
+  text-align: center;
+}
+
+.todo-list__state--empty {
+  align-content: center;
+  gap: 0.35rem;
+}
+
+.todo-list__state--empty > span {
+  color: var(--color-accent);
+  font-size: 1.75rem;
+}
+
+.todo-list__state--empty p {
+  margin-bottom: 0;
+  color: var(--color-text);
+  font-weight: 750;
+}
+
+.todo-list__state--empty small {
+  line-height: 1.5;
+}

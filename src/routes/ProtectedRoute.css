@@ -1,0 +1,7 @@
+.protected-route__loading {
+  min-height: calc(100vh - 4.5rem);
+  display: grid;
+  place-items: center;
+  color: var(--color-primary);
+  font-weight: 750;
+}

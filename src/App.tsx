@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import { Login } from "./pages/Login/Login";
 import { Register } from "./pages/Register/Register";
-import { Tasks } from "./pages/Register/Tasks/Tasks";
+import { Tasks } from "./pages/Tasks/Tasks";
 import { ProtectedRoute } from "./routes/ProtectedRoute";
 import { Navbar } from "./components/Navbar/Navbar";
 

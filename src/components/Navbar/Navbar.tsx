@@ -1,4 +1,6 @@
+import { Link, NavLink } from "react-router-dom";
 import { useAuth } from "../../features/auth/context/useAuth";
+import "./Navbar.css";
 
 export function Navbar() {
   const { user, logout } = useAuth();
@@ -8,10 +10,30 @@ export function Navbar() {
   };
 
   return (
-    <nav >
-      {user && (
-        <button onClick={handleLogout}>Cerrar sesión</button>
-      )}
+    <nav className="navbar" aria-label="Navegación principal">
+      <Link className="navbar__brand" to={user ? "/tasks" : "/login"}>
+        McTasks
+      </Link>
+
+      <div className="navbar__actions">
+        {user ? (
+          <>
+            <span className="navbar__user">{user.email}</span>
+            <button className="navbar__logout" type="button" onClick={handleLogout}>
+              Cerrar sesión
+            </button>
+          </>
+        ) : (
+          <>
+            <NavLink className="navbar__link" to="/login">
+              Iniciar sesión
+            </NavLink>
+            <NavLink className="navbar__register" to="/register">
+              Crear cuenta
+            </NavLink>
+          </>
+        )}
+      </div>
     </nav>
   );
 }

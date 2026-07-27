@@ -1,0 +1,125 @@
+.login-page {
+  min-height: calc(100vh - 4.5rem);
+  padding: 2rem 1rem;
+  display: grid;
+  place-items: center;
+}
+
+.login-card {
+  width: min(100%, 27rem);
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-card);
+}
+
+.login-card__intro {
+  margin-bottom: 1.75rem;
+}
+
+.login-card__eyebrow {
+  margin-bottom: 0.5rem;
+  color: var(--color-primary);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.login-card h1 {
+  margin-bottom: 0.65rem;
+  font-size: clamp(2rem, 9vw, 2.7rem);
+  letter-spacing: -0.055em;
+}
+
+.login-card__intro > p:last-child,
+.login-card__switch {
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+.login-form {
+  display: grid;
+  gap: 1rem;
+}
+
+.login-form__field {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.login-form label {
+  font-size: 0.9rem;
+  font-weight: 750;
+}
+
+.login-form input {
+  min-height: 3.15rem;
+  padding: 0.8rem 0.9rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.login-form input:focus {
+  border-color: var(--color-primary);
+}
+
+.login-form input[aria-invalid="true"] {
+  border-color: var(--color-danger);
+  background: var(--color-danger-soft);
+}
+
+.login-form__error,
+.login-form__alert {
+  color: var(--color-danger);
+  font-size: 0.82rem;
+}
+
+.login-form__submit {
+  min-height: 3.2rem;
+  margin-top: 0.25rem;
+  color: #fff;
+  background: var(--color-primary);
+  border: 0;
+  border-radius: var(--radius-md);
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: var(--shadow-button);
+}
+
+.login-form__submit:hover {
+  background: var(--color-primary-hover);
+}
+
+.login-form__submit:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+.login-form__alert {
+  margin-bottom: 0;
+  padding: 0.8rem;
+  background: var(--color-danger-soft);
+  border-radius: var(--radius-sm);
+}
+
+.login-card__switch {
+  margin: 1.5rem 0 0;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.login-card__switch a {
+  font-weight: 800;
+}
+
+@media (min-width: 640px) {
+  .login-page {
+    padding: 3rem 1.5rem;
+  }
+
+  .login-card {
+    padding: 2.25rem;
+  }
+}

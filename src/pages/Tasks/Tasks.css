@@ -1,0 +1,78 @@
+.tasks-page {
+  width: min(100%, 75rem);
+  margin-inline: auto;
+  padding: 2rem 1rem 4rem;
+}
+
+.tasks-page__header {
+  max-width: 42rem;
+  margin-bottom: 2rem;
+}
+
+.tasks-page__eyebrow {
+  margin-bottom: 0.5rem;
+  color: var(--color-accent);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.tasks-page__header h1 {
+  margin-bottom: 0.6rem;
+  font-size: clamp(2.25rem, 11vw, 3.8rem);
+  letter-spacing: -0.06em;
+}
+
+.tasks-page__header > p:last-child {
+  color: var(--color-text-muted);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.tasks-page__layout {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.tasks-page__form-panel,
+.tasks-page__list-panel {
+  min-width: 0;
+}
+
+.tasks-page__list-panel {
+  padding: 1.25rem;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-card);
+}
+
+.tasks-page__list-panel > h2 {
+  margin-bottom: 1rem;
+  font-size: 1.15rem;
+  letter-spacing: -0.025em;
+}
+
+@media (min-width: 640px) {
+  .tasks-page {
+    padding: 3rem 1.5rem 5rem;
+  }
+
+  .tasks-page__list-panel {
+    padding: 1.75rem;
+  }
+}
+
+@media (min-width: 900px) {
+  .tasks-page__layout {
+    grid-template-columns: minmax(18rem, 22rem) minmax(0, 1fr);
+    align-items: start;
+    gap: 1.75rem;
+  }
+
+  .tasks-page__form-panel {
+    position: sticky;
+    top: 6rem;
+  }
+}

@@ -1,0 +1,135 @@
+.register-page {
+  min-height: calc(100vh - 4.5rem);
+  padding: 2rem 1rem;
+  display: grid;
+  place-items: center;
+}
+
+.register-card {
+  width: min(100%, 29rem);
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-card);
+}
+
+.register-card__intro {
+  margin-bottom: 1.75rem;
+}
+
+.register-card__eyebrow {
+  margin-bottom: 0.5rem;
+  color: var(--color-accent);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.register-card h1 {
+  margin-bottom: 0.65rem;
+  font-size: clamp(2rem, 9vw, 2.7rem);
+  letter-spacing: -0.055em;
+}
+
+.register-card__intro > p:last-child,
+.register-card__switch {
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+.register-form {
+  display: grid;
+  gap: 1rem;
+}
+
+.register-form__field {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.register-form label {
+  font-size: 0.9rem;
+  font-weight: 750;
+}
+
+.register-form input {
+  min-height: 3.15rem;
+  padding: 0.8rem 0.9rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.register-form input:focus {
+  border-color: var(--color-primary);
+}
+
+.register-form input[aria-invalid="true"] {
+  border-color: var(--color-danger);
+  background: var(--color-danger-soft);
+}
+
+.register-form__error,
+.register-form__alert {
+  color: var(--color-danger);
+  font-size: 0.82rem;
+}
+
+.register-form__submit {
+  min-height: 3.2rem;
+  margin-top: 0.25rem;
+  color: #fff;
+  background: var(--color-primary);
+  border: 0;
+  border-radius: var(--radius-md);
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: var(--shadow-button);
+}
+
+.register-form__submit:hover {
+  background: var(--color-primary-hover);
+}
+
+.register-form__submit:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+.register-form__alert,
+.register-form__success {
+  margin-bottom: 0;
+  padding: 0.8rem;
+  border-radius: var(--radius-sm);
+}
+
+.register-form__alert {
+  background: var(--color-danger-soft);
+}
+
+.register-form__success {
+  color: var(--color-success);
+  background: var(--color-success-soft);
+  font-size: 0.85rem;
+}
+
+.register-card__switch {
+  margin: 1.5rem 0 0;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.register-card__switch a {
+  font-weight: 800;
+}
+
+@media (min-width: 640px) {
+  .register-page {
+    padding: 3rem 1.5rem;
+  }
+
+  .register-card {
+    padding: 2.25rem;
+  }
+}
