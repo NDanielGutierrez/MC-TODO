@@ -1,3 +1,10 @@
+import { TodoForm } from "../../../features/tasks/components/Todoform/TodoForm";
+
 export function Tasks() {
-  return <h1>Tareas (en construcción)</h1>;
+  return (
+    <div>
+      <h1>Tareas</h1>
+      <TodoForm />
+    </div>
+  );
 }
