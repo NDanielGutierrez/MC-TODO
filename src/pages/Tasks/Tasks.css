@@ -5,8 +5,9 @@
 }
 
 .tasks-page__header {
-  max-width: 42rem;
   margin-bottom: 2rem;
+  display: grid;
+  gap: 1.25rem;
 }
 
 .tasks-page__eyebrow {
@@ -24,7 +25,7 @@
   letter-spacing: -0.06em;
 }
 
-.tasks-page__header > p:last-child {
+.tasks-page__header > div:first-child > p:last-child {
   color: var(--color-text-muted);
   font-size: 1rem;
   line-height: 1.65;
@@ -62,6 +63,12 @@
   .tasks-page__list-panel {
     padding: 1.75rem;
   }
+
+  .tasks-page__header {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: end;
+  }
+
 }
 
 @media (min-width: 900px) {

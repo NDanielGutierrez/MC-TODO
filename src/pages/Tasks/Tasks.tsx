@@ -1,6 +1,7 @@
 import { useTasks } from "../../features/tasks/hooks/useTasks";
 import { TodoForm } from "../../features/tasks/components/TodoForm/TodoForm";
 import { TodoList } from "../../features/tasks/components/TodoList/TodoList";
+import { EmailSummary } from "../../features/tasks/components/EmailSummary/EmailSummary";
 import "./Tasks.css";
 
 export function Tasks() {
@@ -9,9 +10,13 @@ export function Tasks() {
   return (
     <main className="tasks-page">
       <header className="tasks-page__header">
-        <p className="tasks-page__eyebrow">Tu espacio de trabajo</p>
-        <h1>Mis tareas</h1>
-        <p>Organiza tus pendientes y mantén el foco.</p>
+        <div>
+          <p className="tasks-page__eyebrow">Tu espacio de trabajo</p>
+          <h1>Mis tareas</h1>
+          <p>Organiza tus pendientes y mantén el foco.</p>
+        </div>
+
+        <EmailSummary tasks={tasks} loading={loading} />
       </header>
 
       <div className="tasks-page__layout">

@@ -12,7 +12,7 @@ export function Navbar() {
   return (
     <nav className="navbar" aria-label="Navegación principal">
       <Link className="navbar__brand" to={user ? "/tasks" : "/login"}>
-        McTasks
+        DeUna✓
       </Link>
 
       <div className="navbar__actions">

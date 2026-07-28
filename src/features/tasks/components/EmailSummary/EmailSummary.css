@@ -1,0 +1,47 @@
+.email-summary {
+  display: grid;
+  justify-items: start;
+  gap: 0.55rem;
+}
+
+.email-summary__button {
+  min-height: 3rem;
+  padding: 0.7rem 1rem;
+  color: var(--color-primary);
+  background: var(--color-primary-soft);
+  border: 1px solid color-mix(in srgb, var(--color-primary) 25%, var(--color-border));
+  border-radius: var(--radius-md);
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.email-summary__button:hover {
+  color: #fff;
+  background: var(--color-primary);
+}
+
+.email-summary__button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.email-summary__message {
+  margin-bottom: 0;
+  font-size: 0.82rem;
+  line-height: 1.4;
+}
+
+.email-summary__message--success {
+  color: var(--color-success);
+}
+
+.email-summary__message--error {
+  color: var(--color-danger);
+}
+
+@media (min-width: 640px) {
+  .email-summary {
+    justify-items: end;
+    text-align: right;
+  }
+}
