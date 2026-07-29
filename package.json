@@ -13,7 +13,7 @@
     "@aws-sdk/client-ses": "^3.1097.0",
     "@vercel/node": "^5.9.0",
     "firebase": "^12.16.0",
-    "firebase-admin": "^14.2.0",
+    "firebase-admin": "13.10.0",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
     "react-router-dom": "^7.18.1"
