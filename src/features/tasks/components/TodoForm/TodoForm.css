@@ -38,18 +38,21 @@
 }
 
 .todo-form input,
-.todo-form textarea {
+.todo-form textarea,
+.todo-form select {
   padding: 0.8rem 0.9rem;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
 }
 
-.todo-form input {
+.todo-form input,
+.todo-form select {
   min-height: 3rem;
 }
 
 .todo-form input:focus,
-.todo-form textarea:focus {
+.todo-form textarea:focus,
+.todo-form select:focus {
   border-color: var(--color-primary);
 }
 
@@ -64,6 +67,17 @@
   color: var(--color-danger);
   font-size: 0.82rem;
   line-height: 1.4;
+}
+
+.todo-form label span {
+  color: var(--color-text-muted);
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.todo-form__row {
+  display: grid;
+  gap: 1rem;
 }
 
 .todo-form__submit {
@@ -98,5 +112,9 @@
 @media (min-width: 640px) {
   .todo-form {
     padding: 1.5rem;
+  }
+
+  .todo-form__row {
+    grid-template-columns: 0.8fr 1.2fr;
   }
 }

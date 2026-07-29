@@ -1,0 +1,9 @@
+@media (max-width: 639px) {
+  .app-toaster[data-x-position="right"] {
+    top: auto !important;
+    right: auto !important;
+    bottom: 1rem !important;
+    left: 50% !important;
+    transform: translateX(-50%);
+  }
+}

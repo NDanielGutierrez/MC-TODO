@@ -1,0 +1,59 @@
+.task-progress {
+  padding: 1rem 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+}
+
+.task-progress__chart {
+  width: 7.5rem;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.task-progress__chart svg {
+  width: 100%;
+  display: block;
+}
+
+.task-progress__track,
+.task-progress__value {
+  fill: none;
+  stroke-linecap: round;
+  stroke-width: 15;
+}
+
+.task-progress__track {
+  stroke: var(--color-primary-soft);
+}
+
+.task-progress__value {
+  stroke: var(--color-primary);
+  transition: stroke-dasharray 300ms ease;
+}
+
+.task-progress__chart strong {
+  position: absolute;
+  inset: auto 0 0.2rem;
+  font-size: 1.15rem;
+  text-align: center;
+}
+
+.task-progress__label,
+.task-progress__count {
+  margin: 0;
+}
+
+.task-progress__label {
+  font-weight: 800;
+}
+
+.task-progress__count {
+  margin-top: 0.25rem;
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+}

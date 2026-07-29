@@ -1,0 +1,39 @@
+.task-filters {
+  margin-bottom: 1rem;
+  padding: 0.3rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.25rem;
+  background: var(--color-surface-alt);
+  border-radius: var(--radius-md);
+}
+
+.task-filters__button {
+  min-width: 0;
+  min-height: 2.6rem;
+  padding: 0.5rem 0.35rem;
+  color: var(--color-text-muted);
+  background: transparent;
+  border: 0;
+  border-radius: calc(var(--radius-md) - 0.2rem);
+  font-size: 0.78rem;
+  font-weight: 750;
+  cursor: pointer;
+}
+
+.task-filters__button span {
+  margin-left: 0.3rem;
+  font-size: 0.72rem;
+}
+
+.task-filters__button--active {
+  color: var(--color-primary);
+  background: var(--color-surface);
+  box-shadow: 0 0.2rem 0.7rem rgba(63, 39, 95, 0.08);
+}
+
+@media (min-width: 480px) {
+  .task-filters__button {
+    font-size: 0.86rem;
+  }
+}

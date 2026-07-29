@@ -37,3 +37,13 @@
 .todo-list__state--empty small {
   line-height: 1.5;
 }
+
+@media (min-width: 768px) {
+  .todo-list {
+    max-height: 36rem;
+    padding-right: 0.35rem;
+    overflow-y: auto;
+    scrollbar-color: var(--color-border) transparent;
+    scrollbar-width: thin;
+  }
+}

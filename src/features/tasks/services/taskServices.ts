@@ -1,20 +1,39 @@
-import { collection, addDoc, doc, updateDoc, deleteDoc, Timestamp } from "firebase/firestore";
+import {
+  addDoc,
+  collection,
+  deleteDoc,
+  doc,
+  Timestamp,
+  updateDoc,
+  writeBatch,
+} from "firebase/firestore";
 import { db } from "../../../services/firebase";
-import type { Task } from "../types/task.types";
+import type { Task, TaskFormData } from "../types/task.types";
 
-export async function createTask(userId: string, data: { title: string; description: string }) {
+export async function createTask(userId: string, data: TaskFormData) {
   return await addDoc(collection(db, "tasks"), {
-    title: data.title,
-    description: data.description,
+    title: data.title.trim(),
+    description: data.description.trim(),
     completed: false,
     userId,
     createdAt: Timestamp.now(),
+    priority: data.priority,
+    dueDate: data.dueDate || null,
+    order: -Date.now(),
   });
 }
 
-export async function updateTask(taskId: string, data: Partial<Pick<Task, "title" | "description">>) {
+export async function updateTask(
+  taskId: string,
+  data: Pick<TaskFormData, "title" | "description" | "priority" | "dueDate">
+) {
   const taskRef = doc(db, "tasks", taskId);
-  return await updateDoc(taskRef, data);
+  return await updateDoc(taskRef, {
+    title: data.title.trim(),
+    description: data.description.trim(),
+    priority: data.priority,
+    dueDate: data.dueDate || null,
+  });
 }
 
 export async function deleteTask(taskId: string) {
@@ -25,4 +44,14 @@ export async function deleteTask(taskId: string) {
 export async function toggleTaskCompleted(taskId: string, completed: boolean) {
   const taskRef = doc(db, "tasks", taskId);
   return await updateDoc(taskRef, { completed });
+}
+
+export async function persistTaskOrder(tasks: Task[]) {
+  const batch = writeBatch(db);
+
+  tasks.forEach((task, index) => {
+    batch.update(doc(db, "tasks", task.id), { order: index });
+  });
+
+  await batch.commit();
 }

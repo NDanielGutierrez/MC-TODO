@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { auth } from "../../../services/firebase";
 import { logoutUser } from "../services/authService";
 import { AuthContext } from "./AuthContext";
+import { getAuthErrorMessage } from "../helpers/authErrors";
+import { toast } from "sonner";
 
 interface AuthProviderProps {
     children: ReactNode;
@@ -24,8 +26,14 @@ export function AuthProvider({ children }: AuthProviderProps) {
     }, []);
 
     const logout = async () => {
-        await logoutUser();
-        navigate("/login");
+        try {
+            await logoutUser();
+            toast.success("Sesión cerrada");
+            navigate("/login");
+        } catch (error) {
+            toast.error(getAuthErrorMessage(error));
+            throw error;
+        }
     };
 
     return (

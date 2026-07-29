@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useAuth } from "../../../auth/context/useAuth";
 import { sendTaskSummary } from "../../services/emailService";
 import type { Task } from "../../types/task.types";
+import { toast } from "sonner";
 import "./EmailSummary.css";
 
 interface EmailSummaryProps {
@@ -24,13 +25,15 @@ export function EmailSummary({ tasks, loading }: EmailSummaryProps) {
       await sendTaskSummary(user, tasks);
       setStatus("success");
       setMessage("Resumen enviado a tu correo.");
+      toast.success("Resumen enviado a tu correo");
     } catch (error) {
       setStatus("error");
-      setMessage(
+      const errorMessage =
         error instanceof Error
           ? error.message
-          : "No se pudo enviar el resumen."
-      );
+          : "No se pudo enviar el resumen.";
+      setMessage(errorMessage);
+      toast.error(errorMessage);
     }
   };
 

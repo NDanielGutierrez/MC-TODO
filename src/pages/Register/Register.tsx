@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { validateRegisterForm } from "../../features/auth/helpers/validateRegisterForm";
 import { registerUser } from "../../features/auth/services/authService";
 import { getAuthErrorMessage } from "../../features/auth/helpers/authErrors";
+import { toast } from "sonner";
 import "./Register.css";
 
 export function Register() {
@@ -38,10 +39,13 @@ export function Register() {
     try {
       await registerUser(form.email, form.password);
       setStatus("success");
+      toast.success("Cuenta creada");
       navigate("/tasks");
     } catch (error) {
       setStatus("error");
-      setErrorMessage(getAuthErrorMessage(error));
+      const message = getAuthErrorMessage(error);
+      setErrorMessage(message);
+      toast.error(message);
     }
   };
 

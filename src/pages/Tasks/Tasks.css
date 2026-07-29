@@ -10,6 +10,11 @@
   gap: 1.25rem;
 }
 
+.tasks-page__summary {
+  display: grid;
+  gap: 0.75rem;
+}
+
 .tasks-page__eyebrow {
   margin-bottom: 0.5rem;
   color: var(--color-accent);
@@ -69,6 +74,9 @@
     align-items: end;
   }
 
+  .tasks-page__summary {
+    min-width: 19rem;
+  }
 }
 
 @media (min-width: 900px) {

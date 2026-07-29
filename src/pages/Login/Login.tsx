@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { validateLoginForm } from "../../features/auth/helpers/validateloginForm";
 import { getAuthErrorMessage } from "../../features/auth/helpers/authErrors";
 import { loginUser } from "../../features/auth/services/authService";
+import { toast } from "sonner";
 import "./Login.css";
 
 export function Login() {
@@ -38,10 +39,13 @@ export function Login() {
     try {
       await loginUser(form.email, form.password);
       setStatus("success");
+      toast.success("Sesión iniciada");
       navigate("/tasks");
     } catch (error) {
       setStatus("error");
-      setErrorMessage(getAuthErrorMessage(error));
+      const message = getAuthErrorMessage(error);
+      setErrorMessage(message);
+      toast.error(message);
     }
   };
 
